@@ -1,0 +1,1810 @@
+
+/* =========================================
+   MIRACLE OF SALVATION CHURCH
+   SHARED WEBSITE STYLESHEET
+========================================= */
+
+/* 1. BRAND COLOURS AND GLOBAL SETTINGS */
+
+:root {
+    --primary-blue: #2F88E2;
+    --deep-blue: #14518C;
+    --orange: #F58900;
+    --red: #E20002;
+    --white: #FFFFFF;
+    --black: #171717;
+    --light-bg: #F5F8FC;
+    --text-color: #444444;
+    --border-color: #E5E5E5;
+    --shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    color: var(--text-color);
+    background: var(--white);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* =========================================
+   2. HEADER AND BRAND
+========================================= */
+
+.site-header {
+    width: 100%;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    width: 94%;
+    max-width: 1400px;
+    min-height: 88px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.site-logo {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+}
+
+.brand-name {
+    color: var(--deep-blue);
+    font-size: 17px;
+    font-weight: 900;
+    line-height: 1.2;
+    max-width: 180px;
+}
+
+/* =========================================
+   3. MAIN NAVIGATION
+========================================= */
+
+.main-navigation {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-links > li {
+    position: relative;
+}
+
+.nav-links > li > a {
+    display: block;
+    padding: 14px 11px;
+    color: var(--deep-blue);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.4px;
+    transition: 0.3s ease;
+}
+
+.nav-links > li > a:hover,
+.nav-links > li > a:focus {
+    color: var(--orange);
+}
+
+.nav-links > li > a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--orange);
+    transition: width 0.3s ease;
+}
+
+.nav-links > li > a:hover::after {
+    width: 100%;
+}
+
+/* GIVE BUTTON */
+
+.nav-links > li > .give-link {
+    background: var(--orange);
+    color: var(--white);
+    border-radius: 5px;
+    padding: 11px 20px;
+}
+
+.nav-links > li > .give-link:hover {
+    background: var(--red);
+    color: var(--white);
+}
+
+.nav-links > li > .give-link::after {
+    display: none;
+}
+
+/* =========================================
+   4. DROPDOWN MENUS
+========================================= */
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 225px;
+    background: var(--white);
+    border-top: 3px solid var(--orange);
+    box-shadow: var(--shadow);
+    border-radius: 0 0 6px 6px;
+    padding: 8px 0;
+    display: none;
+    z-index: 1100;
+}
+
+.has-dropdown:hover > .dropdown,
+.has-dropdown:focus-within > .dropdown,
+.has-dropdown.open > .dropdown {
+    display: block;
+}
+
+.dropdown li a {
+    display: block;
+    padding: 10px 17px;
+    color: var(--text-color);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: none;
+    transition: 0.3s ease;
+}
+
+.dropdown li a:hover {
+    color: var(--deep-blue);
+    background: var(--light-bg);
+    padding-left: 23px;
+    border-left: 3px solid var(--orange);
+}
+
+/* =========================================
+   5. MOBILE MENU BUTTON
+========================================= */
+
+.menu-toggle {
+    display: none;
+    background: var(--deep-blue);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--white);
+    margin: 5px 0;
+    border-radius: 3px;
+}
+
+/* =========================================
+   6. GENERAL PAGE SECTIONS
+========================================= */
+
+section {
+    padding: 65px 0;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--deep-blue);
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 12px;
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 35px;
+    color: var(--text-color);
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 4px;
+    background: var(--orange);
+    margin: 12px auto 0;
+    border-radius: 5px;
+}
+
+/* =========================================
+   7. BUTTONS
+========================================= */
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 800;
+    transition: 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background: var(--orange);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--red);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: var(--deep-blue);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-blue);
+}
+
+/* =========================================
+   8. CONTENT CARDS
+========================================= */
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.content-card {
+    background: var(--white);
+    border-radius: 9px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    padding: 25px;
+    transition: 0.3s ease;
+}
+
+.content-card:hover {
+    transform: translateY(-5px);
+}
+
+.content-card h3 {
+    color: var(--deep-blue);
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.content-card p {
+    color: var(--text-color);
+}
+
+/* =========================================
+   9. PAGE HERO SECTIONS
+========================================= */
+
+.page-hero {
+    background: linear-gradient(
+        120deg,
+        rgba(20, 81, 140, 0.94),
+        rgba(47, 136, 226, 0.85)
+    );
+    color: var(--white);
+    text-align: center;
+    padding: 90px 20px;
+}
+
+.page-hero h1 {
+    font-size: 40px;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.page-hero p {
+    max-width: 750px;
+    margin: auto;
+}
+
+/* =========================================
+   10. FORMS
+========================================= */
+
+.form-container {
+    max-width: 750px;
+    margin: auto;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--deep-blue);
+    font-weight: 800;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--primary-blue);
+}
+
+.form-group textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+/* =========================================
+   11. FOOTER
+========================================= */
+
+.site-footer {
+    background: var(--deep-blue);
+    color: var(--white);
+    padding-top: 55px;
+}
+
+.footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.footer-logo {
+    width: 85px;
+    height: 85px;
+    object-fit: contain;
+    background: var(--white);
+    border-radius: 50%;
+    padding: 5px;
+    margin-bottom: 15px;
+}
+
+.footer-about h3,
+.footer-links h3,
+.footer-contact h3 {
+    color: var(--white);
+    font-size: 17px;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.footer-about p,
+.footer-contact p {
+    font-size: 14px;
+    color: #EAF2FC;
+    margin-bottom: 10px;
+}
+
+.footer-links ul li {
+    margin-bottom: 9px;
+}
+
+.footer-links ul li a {
+    color: #EAF2FC;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: var(--orange);
+    padding-left: 5px;
+}
+
+.footer-bottom {
+    background: #103D69;
+    text-align: center;
+    padding: 17px 15px;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    color: var(--white);
+}
+
+/* =========================================
+   12. RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 1150px) {
+
+    .header-container {
+        width: 96%;
+    }
+
+    .nav-links > li > a {
+        padding: 12px 7px;
+        font-size: 11px;
+    }
+
+    .brand-name {
+        font-size: 15px;
+    }
+
+    .site-logo {
+        width: 62px;
+        height: 62px;
+    }
+}
+
+@media (max-width: 950px) {
+
+    .header-container {
+        min-height: 78px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .main-navigation {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        box-shadow: var(--shadow);
+        max-height: 75vh;
+        overflow-y: auto;
+    }
+
+    .main-navigation.active {
+        display: block;
+    }
+
+    .nav-links {
+        display: block;
+        padding: 10px 20px 20px;
+    }
+
+    .nav-links > li {
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-links > li > a {
+        padding: 13px 10px;
+        font-size: 13px;
+    }
+
+    .dropdown {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        border-top: none;
+        border-left: 3px solid var(--orange);
+        border-radius: 0;
+        padding: 0 0 5px 12px;
+    }
+
+    .has-dropdown:hover > .dropdown {
+        display: none;
+    }
+
+    .has-dropdown.open > .dropdown {
+        display: block;
+    }
+
+    .dropdown li a {
+        padding: 9px 14px;
+    }
+
+    .nav-links > li > .give-link {
+        display: inline-block;
+        margin: 8px 0;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .brand-name {
+        font-size: 13px;
+        max-width: 145px;
+    }
+
+    .site-logo {
+        width: 55px;
+        height: 55px;
+    }
+
+    .header-container {
+        min-height: 70px;
+    }
+
+    section {
+        padding: 45px 0;
+    }
+
+    .section-title {
+        font-size: 25px;
+    }
+
+    .page-hero {
+        padding: 65px 15px;
+    }
+
+    .page-hero h1 {
+        font-size: 29px;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+}
+
+/* =========================================
+   HOMEPAGE - MIRACLE OF SALVATION
+========================================= */
+
+/* HERO */
+
+.home-hero {
+    position: relative;
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(90deg, rgba(8, 42, 78, .96), rgba(20, 81, 140, .78)),
+        url('../images/church-banner.jpg') center/cover no-repeat;
+    color: white;
+    padding: 90px 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(8, 42, 78, .35), transparent);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-label,
+.section-tag {
+    display: inline-block;
+    color: var(--orange);
+    font-weight: 900;
+    letter-spacing: 2px;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.hero-content h1 {
+    font-size: clamp(35px, 5vw, 58px);
+    line-height: 1.15;
+    font-weight: 900;
+    margin-bottom: 22px;
+    max-width: 850px;
+}
+
+.hero-content h1 span {
+    color: var(--orange);
+}
+
+.hero-content > p {
+    max-width: 650px;
+    color: #F1F5FA;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons,
+.visit-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.hero-scripture {
+    margin-top: 45px;
+    padding-left: 18px;
+    border-left: 4px solid var(--orange);
+    max-width: 600px;
+}
+
+.hero-scripture p {
+    font-style: italic;
+    font-size: 16px;
+}
+
+.hero-scripture strong {
+    color: var(--orange);
+    font-size: 12px;
+}
+
+/* MOTTO */
+
+.motto-section {
+    background: var(--deep-blue);
+    color: white;
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.motto-content {
+    max-width: 900px;
+}
+
+.motto-content h2 {
+    font-size: clamp(25px, 4vw, 38px);
+    line-height: 1.35;
+    font-weight: 900;
+}
+
+.motto-content p {
+    max-width: 700px;
+    margin: 20px auto;
+    color: #EAF2FC;
+}
+
+.motto-content strong {
+    color: var(--orange);
+    letter-spacing: 2px;
+}
+
+.motto-line {
+    width: 70px;
+    height: 4px;
+    background: var(--orange);
+    margin: 22px auto;
+}
+
+/* WELCOME */
+
+.welcome-grid {
+    display: grid;
+    grid-template-columns: 1.3fr .7fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.welcome-text h2 {
+    color: var(--deep-blue);
+    font-size: 34px;
+    line-height: 1.25;
+    margin-bottom: 20px;
+}
+
+.welcome-text p {
+    margin-bottom: 17px;
+}
+
+.welcome-text .btn {
+    margin-top: 10px;
+}
+
+.welcome-highlight {
+    background: var(--light-bg);
+    border-radius: 12px;
+    border-bottom: 5px solid var(--orange);
+    padding: 45px 30px;
+    text-align: center;
+}
+
+.highlight-symbol {
+    font-size: 55px;
+    color: var(--orange);
+    margin-bottom: 15px;
+}
+
+.welcome-highlight > span {
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: var(--orange);
+}
+
+.welcome-highlight h3 {
+    color: var(--deep-blue);
+    font-size: 24px;
+    margin: 12px 0;
+}
+
+.welcome-highlight strong {
+    color: var(--orange);
+}
+
+/* SECTION HEADINGS */
+
+.section-heading {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto 40px;
+}
+
+.section-heading .section-title {
+    margin-bottom: 15px;
+}
+
+.section-heading .section-subtitle {
+    margin-bottom: 0;
+}
+
+/* MISSION */
+
+.mission-section {
+    background: var(--light-bg);
+}
+
+.mission-content {
+    max-width: 950px;
+    margin: auto;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--orange);
+}
+
+.mission-content p {
+    margin-bottom: 18px;
+    text-align: justify;
+}
+
+.mission-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* VISION */
+
+.vision-section {
+    background: linear-gradient(120deg, #123F6C, #2F88E2);
+    color: white;
+    text-align: center;
+}
+
+.vision-content {
+    max-width: 950px;
+}
+
+.vision-section .section-title {
+    color: white;
+}
+
+.vision-lead {
+    font-size: 23px;
+    font-weight: 800;
+    line-height: 1.6;
+    margin: 25px 0;
+}
+
+.vision-detail {
+    max-width: 850px;
+    margin: auto;
+    padding: 25px;
+    border-top: 2px solid var(--orange);
+}
+
+.vision-detail p {
+    color: #F0F5FC;
+}
+
+/* CORE VALUES */
+
+.values-section {
+    background: white;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.value-card {
+    padding: 27px;
+    border: 1px solid var(--border-color);
+    border-radius: 9px;
+    background: white;
+    box-shadow: var(--shadow);
+    transition: .3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--orange);
+}
+
+.value-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    background: var(--orange);
+    color: white;
+    border-radius: 50%;
+    font-weight: 900;
+    margin-bottom: 17px;
+}
+
+.value-card h3 {
+    color: var(--deep-blue);
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+.value-card p {
+    font-size: 14px;
+}
+
+.value-scripture {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-color);
+    color: var(--deep-blue);
+    font-size: 12px;
+    font-weight: 900;
+}
+
+/* WHY US */
+
+.why-us-section {
+    background: var(--light-bg);
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.why-card {
+    background: white;
+    padding: 28px;
+    border-radius: 9px;
+    box-shadow: var(--shadow);
+}
+
+.why-number {
+    color: var(--orange);
+    font-size: 27px;
+    font-weight: 900;
+}
+
+.why-card h3 {
+    color: var(--deep-blue);
+    margin: 12px 0;
+    font-size: 19px;
+}
+
+/* WEEKLY PROGRAMS */
+
+.programs-section {
+    background: white;
+}
+
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.program-card {
+    position: relative;
+    overflow: hidden;
+    padding: 30px 22px;
+    border-radius: 9px;
+    background: var(--light-bg);
+}
+
+.program-accent {
+    height: 5px;
+    width: 55px;
+    background: var(--orange);
+    margin-bottom: 20px;
+}
+
+.program-card h3 {
+    color: var(--deep-blue);
+    margin-bottom: 12px;
+}
+
+.program-note {
+    margin-top: 25px;
+    text-align: center;
+    padding: 15px;
+    background: #FFF5E8;
+    border-left: 4px solid var(--orange);
+    border-radius: 5px;
+}
+
+/* BRANCHES */
+
+.branches-section {
+    background: var(--light-bg);
+}
+
+.branches-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 23px;
+}
+
+.branch-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: .3s ease;
+}
+
+.branch-card:hover {
+    transform: translateY(-5px);
+}
+
+.branch-card-top {
+    min-height: 75px;
+    background: var(--deep-blue);
+    color: white;
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 4px solid var(--orange);
+}
+
+.branch-label {
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.branch-cross {
+    color: var(--orange);
+    font-size: 27px;
+}
+
+.branch-card-content {
+    padding: 25px;
+}
+
+.branch-card-content h3 {
+    color: var(--deep-blue);
+    font-size: 20px;
+    margin-bottom: 7px;
+}
+
+.branch-location {
+    color: var(--orange);
+    font-size: 13px;
+    font-weight: 900;
+    margin-bottom: 12px;
+}
+
+.branch-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--deep-blue);
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.branch-link:hover {
+    color: var(--orange);
+}
+
+.branches-note {
+    margin-top: 30px;
+    padding: 20px;
+    background: white;
+    text-align: center;
+    border-radius: 7px;
+}
+
+/* ACTIVITIES */
+
+.activities-section {
+    background: white;
+}
+
+.activity-types-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.activity-type {
+    padding: 25px;
+    border: 1px solid var(--border-color);
+    border-radius: 9px;
+}
+
+.activity-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--orange);
+    color: white;
+    font-weight: 900;
+    margin-bottom: 17px;
+}
+
+.activity-type h3 {
+    color: var(--deep-blue);
+    margin-bottom: 10px;
+}
+
+.center-action {
+    text-align: center;
+    margin-top: 35px;
+}
+
+/* VISIT US */
+
+.visit-section {
+    background: linear-gradient(120deg, #123F6C, #2F88E2);
+    color: white;
+    text-align: center;
+}
+
+.visit-content {
+    max-width: 850px;
+}
+
+.visit-content h2 {
+    font-size: 38px;
+    margin-bottom: 18px;
+    font-weight: 900;
+}
+
+.visit-content > p {
+    max-width: 700px;
+    margin: 0 auto 28px;
+    color: #F1F5FA;
+}
+
+.visit-actions {
+    justify-content: center;
+}
+
+.btn-outline {
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: var(--deep-blue);
+}
+
+/* CLOSING SCRIPTURE */
+
+.closing-scripture {
+    background: #103D69;
+    text-align: center;
+    color: white;
+    padding: 45px 20px;
+}
+
+.closing-scripture .container {
+    max-width: 900px;
+}
+
+.closing-scripture p {
+    font-size: 19px;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.closing-scripture strong {
+    color: var(--orange);
+    letter-spacing: 2px;
+}
+
+/* HOMEPAGE RESPONSIVENESS */
+
+@media (max-width: 950px) {
+
+    .values-grid,
+    .why-grid,
+    .branches-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .programs-grid,
+    .activity-types-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .welcome-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .home-hero {
+        min-height: 570px;
+        padding: 65px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 34px;
+    }
+
+    .hero-content > p {
+        font-size: 15px;
+    }
+
+    .hero-scripture {
+        margin-top: 30px;
+    }
+
+    .welcome-text h2 {
+        font-size: 28px;
+    }
+
+    .values-grid,
+    .why-grid,
+    .branches-grid,
+    .programs-grid,
+    .activity-types-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mission-content {
+        padding: 24px;
+    }
+
+    .mission-content p {
+        text-align: left;
+    }
+
+    .vision-lead {
+        font-size: 19px;
+    }
+
+    .visit-content h2 {
+        font-size: 29px;
+    }
+
+    .hero-buttons .btn,
+    .visit-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+}
+/* Larger church logo and brand name */
+.brand-logo img,
+.logo img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+}
+
+.brand-name {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    font-size: 25px;
+    font-weight: 800;
+    text-transform: none;
+}
+
+.brand-name span:last-child {
+    font-size: 19px;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+/* Larger navigation links */
+.nav-links > li > a {
+    font-size: 16px;
+    font-weight: 800;
+    padding: 14px 12px;
+}
+
+/* Dropdown text */
+.dropdown-menu li a {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* Smaller screens */
+@media (max-width: 950px) {
+    .brand-logo img,
+    .logo img {
+        width: 75px;
+        height: 75px;
+    }
+
+    .brand-name {
+        font-size: 21px;
+    }
+
+    .brand-name span:last-child {
+        font-size: 16px;
+    }
+}
+/* Increase church logo size */
+.brand-logo img,
+.logo img {
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+}
+
+@media (max-width: 950px) {
+    .brand-logo img,
+    .logo img {
+        width: 110px;
+        height: 110px;
+    }
+}
+
+@media (max-width: 600px) {
+    .brand-logo img,
+    .logo img {
+        width: 85px;
+        height: 85px;
+    }
+}
+.site-header img,
+.site-header .logo img,
+.site-header .brand-logo img,
+header img {
+    width: 100px !important;
+    height: 100px !important;
+    max-width: none !important;
+    object-fit: contain !important;
+}
+.brand-name {
+    display: flex !important;
+    flex-direction: column !important;
+    font-size: 25px !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    text-transform: none !important;
+}
+
+.brand-name span:last-child {
+    font-size: 20px !important;
+    letter-spacing: 3px;
+}
+/* PROFESSIONAL CHURCH FOOTER */
+
+.site-footer {
+    background: #101F35;
+    color: #FFFFFF;
+    margin-top: 60px;
+    padding: 0;
+    text-align: center;
+}
+
+.footer-contact {
+    padding: 45px 20px 35px;
+}
+
+.footer-contact h2 {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    color: #FFFFFF;
+}
+
+.footer-accent {
+    width: 65px;
+    height: 4px;
+    background: #F58900;
+    margin: 0 auto 22px;
+    border-radius: 5px;
+}
+
+.footer-contact h3 {
+    font-size: 21px;
+    color: #F58900;
+    margin-bottom: 15px;
+}
+
+.footer-contact p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #E5EAF0;
+    margin: 8px 0;
+}
+
+.footer-bottom {
+    background: #091525;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding: 18px 15px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+    color: #FFFFFF;
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+    .footer-contact {
+        padding: 35px 15px;
+    }
+
+    .footer-contact h2 {
+        font-size: 22px;
+    }
+
+    .footer-contact h3 {
+        font-size: 18px;
+    }
+
+    .footer-bottom p {
+        font-size: 12px;
+    }
+}
+/* CONTACT PAGE */
+.contact-hero,
+.give-hero {
+    min-height: 320px;
+    background: linear-gradient(120deg, #102C50, #14518C);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+    color: white;
+}
+
+.contact-hero-content,
+.give-hero-content {
+    max-width: 800px;
+}
+
+.contact-hero-content > span,
+.give-hero-content > span {
+    color: #F58900;
+    font-weight: 800;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.contact-hero h1,
+.give-hero h1 {
+    font-size: clamp(36px, 5vw, 54px);
+    margin: 15px 0;
+    font-weight: 900;
+}
+
+.contact-hero p,
+.give-hero p {
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.contact-section,
+.giving-section {
+    padding: 65px 6%;
+}
+
+.contact-intro,
+.giving-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.contact-intro h2,
+.giving-intro h2 {
+    color: #14518C;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.contact-intro p,
+.giving-intro p {
+    color: #555;
+    line-height: 1.8;
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 35px;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.contact-information {
+    background: #102C50;
+    color: white;
+    padding: 35px;
+    border-radius: 12px;
+}
+
+.contact-information h3,
+.contact-form-container h3 {
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.contact-info-item {
+    display: flex;
+    gap: 15px;
+    margin: 25px 0;
+    align-items: flex-start;
+}
+
+.contact-icon {
+    background: #F58900;
+    color: white;
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+}
+
+.contact-info-item h4 {
+    margin: 0 0 7px;
+    color: #F58900;
+}
+
+.contact-info-item p {
+    margin: 0;
+    line-height: 1.7;
+    color: #E8EDF3;
+}
+
+.contact-quote {
+    border-left: 4px solid #F58900;
+    padding: 15px;
+    margin-top: 35px;
+    background: rgba(255,255,255,0.07);
+    line-height: 1.7;
+}
+
+.contact-quote strong {
+    display: block;
+    color: #F58900;
+    margin-top: 8px;
+}
+
+.contact-form-container {
+    background: #fff;
+    padding: 35px;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+}
+
+.contact-form-container h3 {
+    color: #14518C;
+    margin-bottom: 10px;
+}
+
+.contact-form-container > p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #222;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #d5d5d5;
+    border-radius: 7px;
+    font: inherit;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #14518C;
+    box-shadow: 0 0 0 3px rgba(20,81,140,0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.contact-submit {
+    background: #F58900;
+    color: white;
+    border: none;
+    padding: 15px 28px;
+    border-radius: 6px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.contact-submit:hover {
+    background: #14518C;
+}
+
+.form-success,
+.form-error {
+    padding: 14px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.form-success {
+    background: #e7f6eb;
+    color: #17652b;
+}
+
+.form-error {
+    background: #fdeaea;
+    color: #a51e1e;
+}
+
+/* GIVE PAGE */
+.section-label {
+    color: #F58900;
+    font-weight: 800;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.giving-scripture {
+    max-width: 750px;
+    margin: 45px auto;
+    padding: 35px 20px;
+    text-align: center;
+    background: #f5f8fc;
+    border-radius: 12px;
+    border-bottom: 4px solid #F58900;
+}
+
+.giving-cross {
+    color: #F58900;
+    font-size: 40px;
+}
+
+.giving-scripture blockquote {
+    color: #14518C;
+    font-size: 25px;
+    font-weight: 800;
+    margin: 15px 0;
+}
+
+.giving-scripture strong {
+    color: #555;
+}
+
+.giving-notice {
+    max-width: 750px;
+    margin: 40px auto;
+    padding: 35px;
+    text-align: center;
+    background: #102C50;
+    color: white;
+    border-radius: 12px;
+}
+
+.giving-notice h3 {
+    color: #F58900;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.giving-notice p {
+    line-height: 1.8;
+    color: #e8edf3;
+}
+
+.giving-notice span {
+    display: block;
+    margin-top: 20px;
+    font-weight: 800;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 800px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-section,
+    .giving-section {
+        padding: 45px 5%;
+    }
+
+    .contact-information,
+    .contact-form-container,
+    .giving-notice {
+        padding: 25px;
+    }
+}
+/* Reduce banner height across all pages */
+.page-hero,
+.contact-hero,
+.give-hero,
+.home-hero {
+    min-height: 200px !important;
+    height: auto !important;
+    padding: 35px 20px !important;
+}
+
+/* Reduce banner heading size */
+.page-hero h1,
+.contact-hero h1,
+.give-hero h1,
+.home-hero h1 {
+    font-size: 34px !important;
+    margin: 8px 0 !important;
+}
+
+/* Reduce banner paragraph spacing */
+.page-hero p,
+.contact-hero p,
+.give-hero p,
+.home-hero p {
+    margin: 4px 0 !important;
+    font-size: 7px !important;
+}
+
+@media (max-width: 300px) {
+    .page-hero,
+    .contact-hero,
+    .give-hero,
+    .home-hero {
+        min-height: 75px !important;
+        padding: 12.5px 7.5px !important;
+    }
+}
+/* Further reduce banner height on all pages */
+.page-hero,
+.contact-hero,
+.give-hero,
+.home-hero {
+    min-height: 120px !important;
+    padding: 18px 15px !important;
+}
+
+.page-hero h1,
+.contact-hero h1,
+.give-hero h1,
+.home-hero h1 {
+    font-size: 27px !important;
+    margin: 5px 0 !important;
+}
+
+.page-hero p,
+.contact-hero p,
+.give-hero p,
+.home-hero p {
+    font-size: 13px !important;
+    margin: 5px 0 !important;
+}
+
+@media (max-width: 600px) {
+    .page-hero,
+    .contact-hero,
+    .give-hero,
+    .home-hero {
+        min-height: 95px !important;
+        padding: 14px 10px !important;
+    }
+}
+/* DEV: WORK-IN-PROGRESS BANNER (remove when pages are built) */
+
+.wip-banner {
+    margin: 40px auto;
+    max-width: 900px;
+    padding: 18px 24px;
+    background: #FFF4E0;
+    border: 2px dashed var(--orange);
+    border-radius: 8px;
+    color: var(--black);
+    font-weight: 700;
+    text-align: center;
+}
