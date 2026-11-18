@@ -103,9 +103,9 @@ select {
 .brand-name {
     color: var(--deep-blue);
     font-size: 17px;
-    font-weight: 900;
+    font-weight: bolder;
     line-height: 1.2;
-    max-width: 180px;
+    /*max-width: 180px;*/
 }
 
 /* =========================================
@@ -493,9 +493,8 @@ section {
         font-size: 11px;
     }
 
-    .brand-name {
-        font-size: 15px;
-    }
+    
+    
 
     .site-logo {
         width: 62px;
@@ -1358,10 +1357,9 @@ header img {
     text-transform: none !important;
 }
 
-.brand-name span:last-child {
-    font-size: 20px !important;
-    letter-spacing: 3px;
-}
+
+
+
 /* PROFESSIONAL CHURCH FOOTER */
 
 .site-footer {
@@ -1374,6 +1372,7 @@ header img {
 
 .footer-contact {
     padding: 45px 20px 35px;
+    text-align: center;
 }
 
 .footer-contact h2 {

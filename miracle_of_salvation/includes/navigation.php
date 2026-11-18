@@ -12,9 +12,9 @@
             >
 
             <div class="brand-name">
-                <span>MIRACLE OF</span>
-                <span>SALVATION</span>
-                <span>CHURCH</span>
+                <span>MIRACLE OF
+                SALVATION</br>
+                CHURCH</span>
             </div>
         </a>
 
