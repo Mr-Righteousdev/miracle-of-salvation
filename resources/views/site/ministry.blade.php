@@ -23,9 +23,7 @@
         @endif
 
         @if ($ministry->description)
-            @foreach (preg_split('/\R{2,}/', trim($ministry->description)) as $paragraph)
-                <p>{!! nl2br(e($paragraph)) !!}</p>
-            @endforeach
+            @include('site.partials.paragraphs', ['text' => $ministry->description])
         @else
             <p class="empty-state">More about this ministry is coming soon.</p>
         @endif

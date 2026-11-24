@@ -8,6 +8,7 @@ use App\Models\GalleryImage;
 use App\Models\Leader;
 use App\Models\Ministry;
 use App\Models\Stream;
+use App\Models\Video;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Route;
@@ -22,8 +23,8 @@ Route::get('/branches', fn () => view('site.branches', [
     'branches' => Branch::published()->get(),
 ]))->name('branches');
 
-Route::view('/about/vision-bearer', 'site.wip', ['title' => 'Vision Bearer'])->name('about.vision-bearer');
-Route::view('/about/church-profile', 'site.wip', ['title' => 'Church Profile'])->name('about.church-profile');
+Route::view('/about/vision-bearer', 'site.vision-bearer')->name('about.vision-bearer');
+Route::view('/about/church-profile', 'site.church-profile')->name('about.church-profile');
 Route::get('/about/leadership', fn () => view('site.leadership', [
     'leaders' => Leader::published()->get(),
 ]))->name('about.leadership');
@@ -38,7 +39,9 @@ Route::get('/ministries/{slug}', fn (string $slug) => view('site.ministry', [
 Route::get('/livestream/sermons', fn () => view('site.sermons', [
     'streams' => Stream::past()->paginate(12),
 ]))->name('livestream.sermons');
-Route::view('/livestream/videos', 'site.wip', ['title' => 'Videos'])->name('livestream.videos');
+Route::get('/livestream/videos', fn () => view('site.videos', [
+    'videos' => Video::published()->paginate(12),
+]))->name('livestream.videos');
 
 foreach (EventCategory::cases() as $category) {
     Route::get('/events/'.str($category->routeName())->after('events.'), fn () => view('site.events-category', [

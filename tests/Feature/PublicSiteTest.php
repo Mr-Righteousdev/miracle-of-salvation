@@ -25,8 +25,8 @@ test('the home page lists the church branches', function () {
         ->assertSee(route('branches').'#kinshasa');
 });
 
-test('unfinished pages show the work in progress banner', function () {
-    $this->get(route('about.vision-bearer'))
+test('branch activities still show the work in progress banner', function () {
+    $this->get(route('branches'))
         ->assertOk()
-        ->assertSee('Vision Bearer — page not yet done');
+        ->assertSee('Branch activities — page not yet done');
 });

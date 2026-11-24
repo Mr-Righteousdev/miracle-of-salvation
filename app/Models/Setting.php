@@ -32,6 +32,15 @@ class Setting extends Model
         'youtube_url' => null,
         'instagram_url' => null,
         'giving_instructions' => null,
+        'vision_bearer_name' => null,
+        'vision_bearer_title' => null,
+        'vision_bearer_photo' => null,
+        'vision_bearer_bio' => null,
+        'vision_bearer_quote' => null,
+        'vision_bearer_quote_reference' => null,
+        'church_founded' => null,
+        'church_founder' => null,
+        'church_history' => null,
     ];
 
     /**

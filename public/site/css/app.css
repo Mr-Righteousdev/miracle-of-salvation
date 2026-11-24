@@ -683,3 +683,17 @@
     white-space: pre-line;
     text-align: left;
 }
+
+/* Vision bearer page */
+.vision-bearer-photo {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: var(--radius);
+    margin-bottom: 18px;
+}
+
+.welcome-text .empty-state {
+    margin-top: 12px;
+}
