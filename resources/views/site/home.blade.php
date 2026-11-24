@@ -3,8 +3,6 @@
 @section('title', 'Proclaiming Salvation, Transforming Lives')
 
 @php
-$branches = config('church.branches');
-
 $coreValues = [
     [
         'number' => '01',
@@ -477,19 +475,19 @@ $coreValues = [
                         <div class="branch-card-content">
 
                             <h3>
-                                {{ $branch['name'] }}
+                                {{ $branch->name }}
                             </h3>
 
                             <p class="branch-location">
-                                {{ $branch['location'] }}
+                                {{ $branch->location }}
                             </p>
 
                             <p>
-                                {{ $branch['description'] }}
+                                {{ $branch->description }}
                             </p>
 
                             <a
-                                href="{{ route('branches') }}#{{ $branch['slug'] }}"
+                                href="{{ route('branches') }}#{{ $branch->slug }}"
                                 class="branch-link"
                             >
                                 EXPLORE BRANCH ACTIVITIES →

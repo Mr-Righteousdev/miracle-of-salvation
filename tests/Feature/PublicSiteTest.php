@@ -5,7 +5,7 @@ test('every public page renders', function (string $routeName) {
 })->with([
     'home', 'contact', 'give', 'branches',
     'about.vision-bearer', 'about.church-profile', 'about.leadership',
-    'ministries.youth', 'ministries.children', 'ministries.fathers-mothers', 'ministries.gallery',
+    'ministries.gallery',
     'events', 'events.church-programs', 'events.community-outreach', 'events.missions',
     'announcements', 'live', 'livestream.sermons', 'livestream.videos', 'prayer-requests',
 ]);
@@ -18,7 +18,7 @@ test('the site layout loads the church stylesheet and navigation', function () {
         ->assertSee(route('prayer-requests'));
 });
 
-test('the home page lists the church branches from config', function () {
+test('the home page lists the church branches', function () {
     $this->get(route('home'))
         ->assertOk()
         ->assertSee('Miracle of Salvation Kinshasa')
@@ -26,7 +26,7 @@ test('the home page lists the church branches from config', function () {
 });
 
 test('unfinished pages show the work in progress banner', function () {
-    $this->get(route('about.leadership'))
+    $this->get(route('about.vision-bearer'))
         ->assertOk()
-        ->assertSee('Leadership — page not yet done');
+        ->assertSee('Vision Bearer — page not yet done');
 });

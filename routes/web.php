@@ -2,29 +2,38 @@
 
 use App\Enums\EventCategory;
 use App\Models\Announcement;
+use App\Models\Branch;
 use App\Models\Event;
 use App\Models\GalleryImage;
+use App\Models\Leader;
+use App\Models\Ministry;
 use App\Models\Stream;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'site.home')->name('home');
+Route::get('/', fn () => view('site.home', [
+    'branches' => Branch::published()->get(),
+]))->name('home');
 
 Route::view('/contact', 'site.contact')->name('contact');
 Route::view('/give', 'site.give')->name('give');
-Route::view('/branches', 'site.branches')->name('branches');
+Route::get('/branches', fn () => view('site.branches', [
+    'branches' => Branch::published()->get(),
+]))->name('branches');
 
 Route::view('/about/vision-bearer', 'site.wip', ['title' => 'Vision Bearer'])->name('about.vision-bearer');
 Route::view('/about/church-profile', 'site.wip', ['title' => 'Church Profile'])->name('about.church-profile');
-Route::view('/about/leadership', 'site.wip', ['title' => 'Leadership'])->name('about.leadership');
+Route::get('/about/leadership', fn () => view('site.leadership', [
+    'leaders' => Leader::published()->get(),
+]))->name('about.leadership');
 
-Route::view('/ministries/youth', 'site.wip', ['title' => 'Youth Ministry'])->name('ministries.youth');
-Route::view('/ministries/children', 'site.wip', ['title' => "Children's Ministry"])->name('ministries.children');
-Route::view('/ministries/fathers-mothers', 'site.wip', ['title' => 'Fathers and Mothers Ministry'])->name('ministries.fathers-mothers');
 Route::get('/ministries/gallery', fn () => view('site.gallery', [
     'images' => GalleryImage::published()->paginate(24),
 ]))->name('ministries.gallery');
+Route::get('/ministries/{slug}', fn (string $slug) => view('site.ministry', [
+    'ministry' => Ministry::published()->where('slug', $slug)->firstOrFail(),
+]))->name('ministries.show');
 
 Route::get('/livestream/sermons', fn () => view('site.sermons', [
     'streams' => Stream::past()->paginate(12),

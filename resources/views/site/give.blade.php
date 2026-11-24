@@ -40,13 +40,19 @@
     </div>
 
     <div class="giving-notice">
-        <h3>Giving Platforms Coming Soon</h3>
+        @if ($settings['giving_instructions'])
+            <h3>How to Give</h3>
 
-        <p>
-            Our official giving platforms and payment instructions
-            will be updated soon. Please check this page again for
-            information on how to give and support the ministry.
-        </p>
+            <p class="giving-instructions">{{ $settings['giving_instructions'] }}</p>
+        @else
+            <h3>Giving Platforms Coming Soon</h3>
+
+            <p>
+                Our official giving platforms and payment instructions
+                will be updated soon. Please check this page again for
+                information on how to give and support the ministry.
+            </p>
+        @endif
 
         <span>Thank you for your generosity and partnership.</span>
     </div>

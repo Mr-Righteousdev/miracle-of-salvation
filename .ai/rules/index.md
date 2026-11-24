@@ -16,5 +16,6 @@ Before planning or editing, find the row whose globs match the file's path and r
 | app/Filament/Resources/** | .ai/rules/resources.md |
 | routes/*.php, routes/web.php | .ai/rules/routes.md |
 | database/seeders/DatabaseSeeder.php | .ai/rules/seeders.md |
+| resources/views/site/** | .ai/rules/site.md |
 | resources/views/** | .ai/rules/views.md |
 | app/Filament/Widgets/** | .ai/rules/widgets.md |

@@ -82,11 +82,11 @@
                 </li>
 
                 <li class="has-dropdown">
-                    <a href="{{ route('ministries.youth') }}">MINISTRIES</a>
+                    <a href="{{ $navMinistries->isNotEmpty() ? route('ministries.show', $navMinistries->first()->slug) : route('ministries.gallery') }}">MINISTRIES</a>
                     <ul class="dropdown">
-                        <li><a href="{{ route('ministries.youth') }}">youth ministry</a></li>
-                        <li><a href="{{ route('ministries.children') }}">children's ministry</a></li>
-                        <li><a href="{{ route('ministries.fathers-mothers') }}">fathers and mothers ministry</a></li>
+                        @foreach ($navMinistries as $navMinistry)
+                            <li><a href="{{ route('ministries.show', $navMinistry->slug) }}">{{ str($navMinistry->name)->lower() }}</a></li>
+                        @endforeach
                         <li><a href="{{ route('ministries.gallery') }}">church gallery</a></li>
                     </ul>
                 </li>
@@ -127,16 +127,29 @@
     <div class="footer-contact">
         <h3>CONTACT US</h3>
 
-        <p><strong>Church:</strong> Miracle of Salvation Church</p>
+        <p><strong>Church:</strong> {{ $settings['church_name'] }}</p>
 
-        <p><strong>Address:</strong> P.O. Box 30501, Kampala, Uganda</p>
+        @if ($settings['address'])
+            <p><strong>Address:</strong> {{ $settings['address'] }}</p>
+        @endif
+        @if ($settings['phone'])
+            <p><strong>Phone:</strong> <a href="tel:{{ $settings['phone'] }}">{{ $settings['phone'] }}</a></p>
+        @endif
+        @if ($settings['email'])
+            <p><strong>Email:</strong> <a href="mailto:{{ $settings['email'] }}">{{ $settings['email'] }}</a></p>
+        @endif
+        @if ($settings['service_times'])
+            <p><strong>Services:</strong> {{ $settings['service_times'] }}</p>
+        @endif
 
         <p>Join us for worship, prayer and fellowship.</p>
+
+        @include('site.partials.social-links')
     </div>
 
     <div class="footer-bottom">
         <p>
-            &copy; {{ date('Y') }} Miracle of Salvation Church.
+            &copy; {{ date('Y') }} {{ $settings['church_name'] }}.
             All Rights Reserved.
         </p>
     </div>

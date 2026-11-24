@@ -614,3 +614,72 @@
     opacity: .45;
     cursor: default;
 }
+
+/* Branch cards: optional photo + contact details (DB-driven) */
+.branch-photo {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-bottom: 4px solid var(--orange);
+}
+
+.branch-details {
+    list-style: none;
+    margin-top: 14px;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.branch-details a {
+    color: var(--deep-blue);
+}
+
+/* Leadership + ministry pages (DB-driven) */
+.leader-card img {
+    aspect-ratio: 1 / 1;
+}
+
+.leader-role {
+    color: var(--orange) !important;
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+
+.ministry-page {
+    max-width: 820px;
+}
+
+.ministry-page p {
+    margin-bottom: 16px;
+    line-height: 1.8;
+}
+
+.ministry-cover {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: var(--radius);
+    margin-bottom: 24px;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.social-links a,
+.footer-contact a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.giving-instructions {
+    white-space: pre-line;
+    text-align: left;
+}
